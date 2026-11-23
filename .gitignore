@@ -1,0 +1,14 @@
+# OS / éditeurs
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Outils de test
+.playwright-mcp/
+node_modules/
+
+# Divers
+*.log
+.env
