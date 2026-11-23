@@ -670,6 +670,9 @@ svg { display: block; }
 /* =========================================================
    RESPONSIVE
    ========================================================= */
+/* Les éléments de grille ne doivent jamais s'élargir au-delà de leur colonne */
+.about > *, .facilities > *, .loc-grid > *, .plans > *, .cta > *, .coaches__top > * { min-width: 0; }
+
 @media (max-width: 1100px) {
   .nav__links { gap: 22px; }
   .about { grid-template-columns: 1fr; }
@@ -679,6 +682,8 @@ svg { display: block; }
   .plan { min-height: 0; }
   .loc-grid { grid-template-columns: 1fr; }
   .cta { grid-template-columns: 1fr; padding: 50px 30px; }
+  .cta__side { max-width: 620px; }
+  .facilities__viewport { overflow: visible; }
   .result-card { width: auto; max-width: 560px; }
 }
 @media (max-width: 760px) {
@@ -697,10 +702,12 @@ svg { display: block; }
   .coaches { padding: 90px 16px 40px; }
   .coaches__top { flex-direction: column; gap: 20px; }
   .stat-card-wrap { margin: 0; }
-  .result-card { grid-template-columns: 1fr; padding: 28px; gap: 10px; }
+  .result-card { grid-template-columns: 1fr; padding: 28px 24px 64px; gap: 10px; }
   .result-card p { font-size: 16px; }
   .coaches__stage { min-height: 560px; margin-top: 30px; }
-  .coaches__title { font-size: 15vw; }
+  .coaches__title { font-size: 11.4vw; }
+  .coach-deck { width: min(60vw, 300px); }
+  .coaches__stage { min-height: 520px; }
   .coaches__nav { gap: 160px; }
   .days { display: flex; overflow-x: auto; scrollbar-width: none; }
   .days button { flex: 0 0 92px; }
@@ -712,10 +719,31 @@ svg { display: block; }
   .row__time { font-size: 18px; }
   .loc-info dl { grid-template-columns: 1fr; }
   .cta { margin-top: 80px; min-height: 0; padding: 40px 22px; }
-  .cta__title { font-size: 21vw; }
+  .cta__title { font-size: 14.5vw; }
+  .cta__side { max-width: none; }
+  .cta__side p { font-size: 14px; }
   .cta__form { flex-direction: column; }
+  .cta__form input { flex: none; width: 100%; height: 54px; }
+  .cta__form .btn { width: 100%; height: 54px; }
+  .facilities { padding: 40px 0 40px 16px; }
+  .fac { flex-basis: 78vw; }
+  .h-lg { font-size: clamp(38px, 11vw, 56px); }
+  .about__title { font-size: clamp(26px, 7.2vw, 34px); margin-bottom: 36px; }
+  .features li { grid-template-columns: 56px 1fr; }
+  .result-card-wrap, .stat-card-wrap { width: 100%; }
+  .result-card { width: 100%; }
+  .plan { padding: 28px 22px 24px; }
+  .loc-list { padding: 4px 18px; }
+  .loc-list b { font-size: 20px; }
+  .pay { gap: 8px; }
   .footer { grid-template-columns: 1fr 1fr; gap: 36px; padding: 50px 16px 60px; }
   .footer__brand { grid-column: 1 / -1; }
+}
+
+@media (max-width: 380px) {
+  .hero__stats { font-size: 10px; }
+  .footer { grid-template-columns: 1fr; }
+  .cta { padding: 34px 18px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
