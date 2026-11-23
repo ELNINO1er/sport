@@ -12,3 +12,6 @@ node_modules/
 # Divers
 *.log
 .env
+
+# Vidéos de présentation (lourdes)
+showcase/
